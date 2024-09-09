@@ -9,7 +9,11 @@ SortedBagIterator::SortedBagIterator(const SortedBag& b) : bag(b) {
 }
 
 TComp SortedBagIterator::getCurrent() {
-	return currentPosition;
+    if (currentPosition >= bag.sizeBag)
+    {
+        throw exception();
+    }
+    return bag.mainArray[currentPosition];
 }
 
 bool SortedBagIterator::valid() {
@@ -17,10 +21,11 @@ bool SortedBagIterator::valid() {
 }
 
 void SortedBagIterator::next() {
-    if (!valid()) {
-        throw exception();
-    }
-    currentPosition++;
+    if (currentPosition  >= bag.sizeBag)
+        {
+            throw exception();
+        }
+        currentPosition++;
 }
 
 void SortedBagIterator::first() {

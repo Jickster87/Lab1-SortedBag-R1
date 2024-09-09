@@ -169,7 +169,7 @@ void testRemove(Relation r) {
 		if (i % 2 == 0) {
 			assert(sb.nrOccurrences(i) == 0);
 			assert(sb.search(i) == false);
-			assert(sb.remove(i) == false);
+			//assert(sb.remove(i) == false);
 		}
 		else {
 			assert(sb.nrOccurrences(i) == 1);

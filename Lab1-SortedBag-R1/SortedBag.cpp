@@ -43,6 +43,11 @@ void SortedBag::add(TComp e) {
 
 
 bool SortedBag::remove(TComp e) {
+    // If the bag is empty, return false
+      if (sizeBag == 0) {
+          return false;
+      }
+    
 	//find elem
     int elemPos = -1;
     for (int i = sizeBag; i >= 0; i--) {
